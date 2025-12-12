@@ -14,9 +14,13 @@ app.use(express.urlencoded({extended : true}));
 
 import authRoutes from "./routes/authRoutes.js";
 import sellerRoutes from "./routes/sellerRoutes.js";
+import auctionRoutes from "./routes/auctionRoutes.js";
+import adminRoutes from "./routes/AdminRoutes.js";
 
 app.use('/api/auth' , authRoutes);
 app.use('/api/seller' , sellerRoutes);
+app.use('/api/auction' , auctionRoutes);
+app.use('/api/admin' , adminRoutes);
 
 mongoose.connect(process.env.MONGO_URL , {useNewUrlParser : true , useUnifiedTopology : true})
 .then(() => {
